@@ -1,0 +1,33 @@
+{
+    "name": "ニコ見なべ",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "ニコニコ用ブラウザ拡張機能の詰め合わせ",
+    "permissions": [
+        "storage"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.nicovideo.jp/*"
+            ],
+            "js": [
+                "jquery-3.7.1.min.js",
+                "files/video/main.js",
+                "files/live/main.js",
+                "files/dic/main.js"
+            ],
+            "css": [
+                "files/video/style.css",
+                "files/dic/style.css"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "files/popup/popup.html"
+    },
+    "options_ui": {
+        "page": "files/options/options.html",
+        "open_in_tab": true
+    }
+}

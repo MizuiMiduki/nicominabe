@@ -1,0 +1,105 @@
+/*COPYRIGHT (C)2023 MizuiMiduki*/
+
+/* アニメーション */
+@keyframes disable2enable {
+  0% {
+    background: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    line-height: 1.0;
+    border-width: 0px;
+  }
+
+  100% {
+    background: #ffae193d;
+    border-color: #f58200;
+    line-height: 1.7;
+    border-width: 1px;
+  }
+}
+
+@keyframes enable2disable {
+  0% {
+    background: #ffae193d;
+    border-color: #f58200;
+    line-height: 1.7;
+    border-width: 1px;
+  }
+  100% {
+    background: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    line-height: 1.0;
+    border-width: 0px;
+  }
+}
+
+/* シロナガスクジラ対策CSS */
+.nicohyaku-plus--auto {
+  animation: disable2enable 0.2s linear;
+  transform: translate3d(0, 0, 0);
+  background-color: #ffae193d;
+  border: 1px;
+  border-color: #f58200;
+  border-style: solid;
+  color: black !important;
+  line-height: 1.7;
+  text-decoration: none !important;
+  text-shadow: 0 0 10px white;
+}
+
+.nicohyaku-plus--auto:hover {
+  background-color: #00000000 !important;
+  color: #f58200 !important;
+  border-color: #f58200 !important;
+  text-shadow: 0 0 10px white;
+}
+
+.nicohyaku-plus--auto-hdn {
+  animation: disable2enable 0.2s linear;
+  transform: translate3d(0, 0, 0);
+  background-color: #ffae193d;
+  border: 1px;
+  border-color: #f58200;
+  border-style: solid;
+  color: black !important;
+  line-height: 1.7;
+  text-decoration: none !important;
+  text-shadow: 0 0 10px white;
+}
+
+.nicohyaku-plus--auto-hdn:hover {
+  background-color: #00000000 !important;
+  color: #f58200 !important;
+  border-color: #f58200 !important;
+  text-shadow: 0 0 10px white;
+}
+
+.highlight-none {
+  animation: enable2disable 0.2s linear;
+  transform: translate3d(0, 0, 0);
+}
+
+/* ボタンCSS */
+#nicohyaku_plus__on_off_button {
+  height: 30px;
+  background-color: transparent;
+  margin: 0 5px 0 5px;
+  border-radius: 3px;
+}
+
+.nicohyaku-plus--on-off-button-disable {
+  border: gray 1px solid !important;
+  color: gray;
+}
+
+.nicohyaku-plus--on-off-button-disable:hover {
+  color: #f58200;
+}
+
+.nicohyaku-plus--on-off-button-enable {
+  border: #f58200 1px solid !important;
+  color: #f58200;
+}
+
+.nicohyaku-plus--on-off-button-enable:hover {
+  color: gray;
+}
