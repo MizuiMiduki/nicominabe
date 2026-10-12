@@ -1,6 +1,6 @@
 {
     "name": "nicominabe",
-    "version": "2.0.0",
+    "version": "3.1.0",
     "private": true,
     "type": "module",
     "scripts": {
@@ -9,6 +9,7 @@
         "build": "wxt build",
         "build:firefox": "wxt build --browser firefox",
         "zip": "wxt zip",
+        "zip:firefox": "wxt zip --browser firefox",
         "typecheck": "tsc --noEmit"
     },
     "devDependencies": {
