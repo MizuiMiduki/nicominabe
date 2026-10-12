@@ -149,6 +149,11 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+.comment-toggle-card {
+  border-left-color: var(--nco-primary);
+  margin-top: 24px;
+}
+
 .feature-toggle-info {
   flex: 1;
 }

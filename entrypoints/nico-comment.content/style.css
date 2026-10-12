@@ -1,0 +1,75 @@
+/* 回転アニメーション: <video> 要素を直接ターゲット */
+video#VideoPlayer_2 {
+    animation: 0.2s rotate2;
+}
+
+@keyframes rotate2 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(90deg) scale(56.25%); }
+}
+
+video#VideoPlayer_3 {
+    animation: 0.2s rotate3;
+}
+
+@keyframes rotate3 {
+    0% { transform: rotate(90deg) scale(56.25%); }
+    100% { transform: rotate(180deg); }
+}
+
+video#VideoPlayer_4 {
+    animation: 0.2s rotate4;
+}
+
+@keyframes rotate4 {
+    0% { transform: rotate(180deg); }
+    100% { transform: rotate(270deg) scale(56.25%); }
+}
+
+video#VideoPlayer {
+    animation: 0.2s rotate;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(270deg) scale(56.25%); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 拡張機能ボタンスタイル */
+.nico-ex-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #ffffff;
+    opacity: 0.8;
+    border-radius: 4px;
+    transition: opacity 0.15s, background-color 0.15s;
+    vertical-align: middle;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.nico-ex-btn:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.nico-ex-btn:active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.nico-ex-btn-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.nico-ex-btn-inner svg {
+    display: block;
+}

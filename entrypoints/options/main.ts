@@ -23,6 +23,9 @@ const cemeteryToggle = requireElement<HTMLInputElement>("#cemetery-toggle");
 const toggleStatusText = requireElement<HTMLElement>("#toggle-status-text");
 const modeSelectionArea = requireElement<HTMLElement>("#mode-selection-area");
 
+const commentToggle = requireElement<HTMLInputElement>("#comment-toggle");
+const commentStatusText = requireElement<HTMLElement>("#comment-status-text");
+
 const saveNormalButton = requireElement<HTMLButtonElement>("#save-normal");
 const saveRandomButton = requireElement<HTMLButtonElement>("#save-random");
 const saveManualButton = requireElement<HTMLButtonElement>("#save-manual");
@@ -122,6 +125,7 @@ try {
     "manual_id",
     "manual_url",
     "cemetery_enabled",
+    "comment_invisible_mode",
   ]);
 
   isFeatureEnabled =
@@ -144,10 +148,27 @@ try {
   }
   updatePreview();
   updateUI();
+
+  // コメント欄初期非表示設定の初期化
+  const isCommentInitiallyHidden = stored.comment_invisible_mode === "future_disable";
+  commentToggle.checked = isCommentInitiallyHidden;
+  commentStatusText.textContent = isCommentInitiallyHidden ? "初期非表示 (ON)" : "初期表示 (OFF)";
 } catch (error) {
   currentModeBadge.textContent = "読み込めませんでした";
   showError(error);
 }
+
+commentToggle.addEventListener("change", async () => {
+  try {
+    const isHidden = commentToggle.checked;
+    await browser.storage.local.set({
+      comment_invisible_mode: isHidden ? "future_disable" : "future_enable",
+    });
+    commentStatusText.textContent = isHidden ? "初期非表示 (ON)" : "初期表示 (OFF)";
+  } catch (error) {
+    showError(error);
+  }
+});
 
 cemeteryToggle.addEventListener("change", () => {
   saveToggle(cemeteryToggle.checked);
