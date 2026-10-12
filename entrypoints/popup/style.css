@@ -1,0 +1,61 @@
+:root {
+  color: #252525;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  min-width: 280px;
+}
+
+header {
+  background: #252525;
+  color: white;
+  padding: 10px 16px;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+main {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.label {
+  margin: 0;
+}
+
+.current-mode {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+button,
+.niconico-link {
+  background: #252525;
+  border: 1px solid #252525;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  padding: 9px 12px;
+  text-align: center;
+  text-decoration: none;
+}
+
+button:hover,
+.niconico-link:hover {
+  background: #555;
+}
+
+.error-message {
+  color: #b00020;
+  overflow-wrap: anywhere;
+}

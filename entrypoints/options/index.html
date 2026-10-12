@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="wxt.open_in_tab" content="true" />
+    <title>ニコ見なべの設定</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="header-inner">
+          <div class="title-area">
+            <h1>ニコニコ動画 共同墓地</h1>
+            <p>niconico-movie PublicCemetery</p>
+          </div>
+          <div class="header-right">
+            <p class="status-area">
+              モード：<strong id="current-mode">読み込み中...</strong>
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="main-inner">
+          <p id="error-message" class="error-message" role="alert" hidden></p>
+
+          <div class="tabs">
+            <input id="normal" type="radio" name="tab_item" checked />
+            <label class="tab-item" for="normal">ノーマル</label>
+            <input id="random" type="radio" name="tab_item" />
+            <label class="tab-item" for="random">ランダム</label>
+            <input id="manual" type="radio" name="tab_item" />
+            <label class="tab-item" for="manual">マニュアル</label>
+
+            <section class="tab-content" id="normal_content">
+              <h2>ノーマルモードではこちらの削除動画へ遷移します</h2>
+              <div class="button-style">
+                <button id="save-normal" class="select-button" type="button">
+                  ノーマルモードにする
+                </button>
+              </div>
+              <div class="movie-style">
+                <iframe
+                  title="ノーマルモードの動画プレビュー"
+                  src="https://ext.nicovideo.jp/thumb/sm38213757"
+                  loading="lazy"
+                  scrolling="no"
+                  referrerpolicy="no-referrer"
+                ></iframe>
+              </div>
+            </section>
+
+            <section class="tab-content" id="random_content">
+              <h2>ランダムモードではこちらの削除動画へ遷移します</h2>
+              <div class="button-style">
+                <button id="save-random" class="select-button" type="button">
+                  ランダムモードにする
+                </button>
+              </div>
+              <div class="movie-style">
+                <iframe title="動画プレビュー sm19139061" src="https://ext.nicovideo.jp/thumb/sm19139061" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm27404927" src="https://ext.nicovideo.jp/thumb/sm27404927" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm38213757" src="https://ext.nicovideo.jp/thumb/sm38213757" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm21764448" src="https://ext.nicovideo.jp/thumb/sm21764448" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm21764440" src="https://ext.nicovideo.jp/thumb/sm21764440" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm21764424" src="https://ext.nicovideo.jp/thumb/sm21764424" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm19668914" src="https://ext.nicovideo.jp/thumb/sm19668914" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm19668700" src="https://ext.nicovideo.jp/thumb/sm19668700" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm19668547" src="https://ext.nicovideo.jp/thumb/sm19668547" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm19557682" src="https://ext.nicovideo.jp/thumb/sm19557682" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm19140178" src="https://ext.nicovideo.jp/thumb/sm19140178" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm27404936" src="https://ext.nicovideo.jp/thumb/sm27404936" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm27404931" src="https://ext.nicovideo.jp/thumb/sm27404931" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm19139071" src="https://ext.nicovideo.jp/thumb/sm19139071" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+                <iframe title="動画プレビュー sm19139067" src="https://ext.nicovideo.jp/thumb/sm19139067" loading="lazy" scrolling="no" referrerpolicy="no-referrer"></iframe>
+              </div>
+            </section>
+
+            <section class="tab-content" id="manual_content">
+              <h2>マニュアルモードは任意の動画へ遷移します</h2>
+              <form id="manual-form">
+                <p>動画IDを入力してモード変更ボタンを押してください</p>
+                <div class="manual-id">
+                  <select id="manual-prefix" name="prefix" required>
+                    <option value="sm">sm</option>
+                    <option value="nm">nm</option>
+                  </select>
+                  <input
+                    id="manual-number"
+                    name="number"
+                    type="number"
+                    min="1"
+                    step="1"
+                    inputmode="numeric"
+                    placeholder="number"
+                    required
+                  />
+                </div>
+                <button class="select-button" type="submit">
+                  マニュアルモードにする
+                </button>
+              </form>
+              <div class="movie-style">
+                <iframe
+                  id="manual-preview"
+                  title="指定した動画のプレビュー"
+                  loading="lazy"
+                  scrolling="no"
+                  referrerpolicy="no-referrer"
+                ></iframe>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>
+          &copy; 2022-<span id="current-year"></span> MizuiMiduki
+          | <a href="https://github.com/MizuiMiduki/nicominabe" target="_blank" rel="noreferrer noopener">SourceCode (GitHub)</a>
+        </p>
+      </footer>
+    </div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

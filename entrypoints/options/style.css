@@ -1,0 +1,255 @@
+:root {
+  color: #252525;
+  font-family: "Kosugi Maru", "Meiryo", sans-serif;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #efefef;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: #252525;
+  color: white;
+  padding: 8px 16px;
+}
+
+.header-inner {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.title-area h1,
+.title-area p {
+  margin: 0;
+}
+
+.title-area h1 {
+  font-size: 24px;
+}
+
+.title-area p {
+  font-size: 13px;
+  text-align: center;
+}
+
+.header-right {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+}
+
+.status-area {
+  color: #d9a300;
+  font-weight: 900;
+  margin: 0;
+  white-space: nowrap;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+}
+
+.main-inner {
+  margin: 20px auto;
+  max-width: 1280px;
+  padding: 0 20px;
+}
+
+.error-message {
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
+
+.error-message {
+  color: #b00020;
+}
+
+.tabs {
+  background: white;
+  box-shadow: 0 5px 10px #252525;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.tabs input[name="tab_item"] {
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.tab-item {
+  background: #fafafa;
+  border-bottom: 3px solid #ddd;
+  color: #252525;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-weight: bold;
+  line-height: 50px;
+  text-align: center;
+  transition: opacity 0.2s ease;
+  width: calc(100% / 3);
+}
+
+.tab-item:hover {
+  opacity: 0.75;
+}
+
+.tabs input:checked + .tab-item {
+  background: #252525;
+  color: white;
+}
+
+.tabs input:focus-visible + .tab-item {
+  outline: 3px solid #f58200;
+  outline-offset: -3px;
+}
+
+.tab-content {
+  clear: both;
+  display: none;
+  overflow: hidden;
+  padding: 20px 40px 0;
+}
+
+#normal:checked ~ #normal_content,
+#random:checked ~ #random_content,
+#manual:checked ~ #manual_content {
+  display: block;
+}
+
+.tab-content h2 {
+  font-size: 20px;
+  text-align: center;
+  text-decoration: underline dotted;
+}
+
+.button-style {
+  text-align: center;
+}
+
+.select-button {
+  background: #252525;
+  border: 1px solid #252525;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  padding: 8px 20px;
+  width: min(40%, 320px);
+}
+
+.select-button:hover {
+  background: white;
+  color: #252525;
+}
+
+.movie-style {
+  text-align: center;
+  width: 100%;
+}
+
+.movie-style iframe {
+  border: 1px solid #ccc;
+  box-shadow: 0 5px 10px #252525;
+  height: 176px;
+  margin: 10px;
+  max-width: calc(100% - 20px);
+  vertical-align: top;
+  width: 312px;
+}
+
+#manual-form {
+  margin: 0 auto 16px;
+  text-align: center;
+}
+
+#manual-form p {
+  margin: 12px;
+}
+
+.manual-id {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.manual-id select,
+.manual-id input {
+  font: inherit;
+  padding: 6px 10px;
+}
+
+footer {
+  background: #252525;
+  margin-top: auto;
+  padding: 8px 16px;
+  text-align: center;
+}
+
+footer p,
+footer a {
+  color: white;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-right {
+    width: 100%;
+  }
+
+  .title-area h1 {
+    font-size: 20px;
+  }
+
+  .tab-content {
+    padding: 16px 12px 0;
+  }
+
+  .tab-content h2 {
+    font-size: 17px;
+  }
+
+  .select-button {
+    width: 90%;
+  }
+
+  .tab-item {
+    font-size: 14px;
+  }
+}

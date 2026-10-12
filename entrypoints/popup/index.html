@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ニコ見なべ</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>ニコ見なべ</h1>
+    </header>
+    <main>
+      <p class="label">削除動画の遷移モード</p>
+      <p id="current-mode" class="current-mode" aria-live="polite">読み込み中...</p>
+      <p id="error-message" class="error-message" role="alert" hidden></p>
+      <button id="open-options" type="button">設定を開く</button>
+      <a
+        class="niconico-link"
+        href="https://www.nicovideo.jp/video_top?cmnhd_ref=device%3Dpc%26site%3Dniconico%26pos%3Dheader_servicelink%26page%3Dvideo_top"
+        target="_blank"
+        rel="noreferrer"
+      >ニコニコ動画を開く</a>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
