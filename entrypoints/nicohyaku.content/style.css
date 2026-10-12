@@ -78,6 +78,10 @@
   transform: translate3d(0, 0, 0);
 }
 
+.nicohyaku-plus--no-animation {
+  animation: none !important;
+}
+
 /* ボタンCSS */
 #nicohyaku_plus__on_off_button {
   height: 30px;
