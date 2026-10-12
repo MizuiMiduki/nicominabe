@@ -7,20 +7,24 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header>
-      <h1>ニコ見なべ</h1>
+    <header class="popup-header">
+      <div class="popup-brand">
+        <h1>ニコ見なべ</h1>
+      </div>
     </header>
-    <main>
-      <p class="label">削除動画の遷移モード</p>
-      <p id="current-mode" class="current-mode" aria-live="polite">読み込み中...</p>
+    <main class="popup-main">
+      <section class="popup-card">
+        <span class="popup-label">共同墓地 遷移モード</span>
+        <p id="current-mode" class="current-mode" aria-live="polite">読み込み中...</p>
+      </section>
       <p id="error-message" class="error-message" role="alert" hidden></p>
-      <button id="open-options" type="button">設定を開く</button>
+      <button id="open-options" class="popup-btn popup-btn--primary" type="button">設定を開く</button>
       <a
-        class="niconico-link"
+        class="popup-btn popup-btn--sub"
         href="https://www.nicovideo.jp/video_top?cmnhd_ref=device%3Dpc%26site%3Dniconico%26pos%3Dheader_servicelink%26page%3Dvideo_top"
         target="_blank"
         rel="noreferrer"
-      >ニコニコ動画を開く</a>
+      >ニコニコ動画を開く ↗</a>
     </main>
     <script type="module" src="./main.ts"></script>
   </body>

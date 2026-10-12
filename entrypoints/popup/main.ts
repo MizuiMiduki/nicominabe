@@ -17,11 +17,20 @@ if (!currentMode || !errorMessage || !openOptionsButton) {
 }
 
 try {
-  const stored = await browser.storage.local.get("mode");
-  currentMode.textContent =
-    typeof stored.mode === "string"
-      ? MODE_LABELS[stored.mode] ?? "ノーマル"
-      : "ノーマル";
+  const stored = await browser.storage.local.get(["mode", "cemetery_enabled"]);
+  const isEnabled =
+    typeof stored.cemetery_enabled === "boolean"
+      ? stored.cemetery_enabled
+      : stored.mode !== "off";
+
+  if (!isEnabled) {
+    currentMode.textContent = "オフ (無効)";
+    currentMode.style.color = "#888";
+  } else {
+    const mode = typeof stored.mode === "string" ? stored.mode : "normal";
+    currentMode.textContent = MODE_LABELS[mode] ?? "ノーマル";
+    currentMode.style.color = "#ff6600";
+  }
 } catch (error) {
   currentMode.textContent = "設定を読み込めませんでした";
   errorMessage.hidden = false;

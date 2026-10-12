@@ -67,9 +67,19 @@ export default defineContentScript({
         "mode",
         "manual_id",
         "manual_url",
+        "cemetery_enabled",
       ]);
     } catch (error) {
       console.error("動画遷移の設定を読み込めませんでした。", error);
+      return;
+    }
+
+    const isEnabled =
+      typeof stored.cemetery_enabled === "boolean"
+        ? stored.cemetery_enabled
+        : stored.mode !== "off";
+
+    if (!isEnabled) {
       return;
     }
 
